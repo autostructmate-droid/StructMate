@@ -87,7 +87,7 @@ function initCalcCarousel() {
 
   function startTimer() {
     clearInterval(timer);
-    timer = setInterval(next, 4200);
+    timer = setInterval(next, 2000);
   }
 
   /* Dot click — manual jump */
