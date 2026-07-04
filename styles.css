@@ -157,11 +157,14 @@ ul  { list-style: none; }
   flex-direction: column;
   gap: 5px;
   background: none;
-  border: none;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 6px;
   cursor: pointer;
-  padding: 4px;
+  padding: 6px 8px;
   z-index: 1001;
 }
+
+.navbar.scrolled .hamburger { border-color: rgba(0,0,0,0.1); }
 
 .hamburger span {
   display: block;
@@ -639,17 +642,24 @@ ul  { list-style: none; }
 
 .calc-carousel { position: relative; overflow: hidden; }
 
-.calc-slide { display: none; }
+.calc-slide { display: none; position: relative; z-index: 1; }
 
 .calc-slide.active {
   display: block;
-  animation: slideReveal 0.5s var(--ease-out) both;
+  animation: calcSlideIn 0.45s var(--ease-out) both;
 }
 
-@keyframes slideReveal {
-  from { opacity: 0; transform: translateX(28px); }
-  to   { opacity: 1; transform: none; }
+.calc-slide.exiting {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  animation: calcSlideOut 0.45s var(--ease-out) both;
 }
+
+@keyframes calcSlideIn  { from { transform: translateX(100%); } to { transform: none; } }
+@keyframes calcSlideOut { from { transform: none; } to { transform: translateX(-100%); } }
 
 /* Carousel dots + label */
 .carousel-controls {
@@ -1066,6 +1076,7 @@ ul  { list-style: none; }
    RESPONSIVE — 480px
    ========================================================= */
 @media (max-width: 480px) {
+  .hero-title { font-size: clamp(3rem, 18vw, 5rem); }
   .ac-panel { padding: 3rem 1.5rem; }
   .about-title { font-size: 3rem; }
 }

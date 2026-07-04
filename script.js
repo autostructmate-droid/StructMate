@@ -75,8 +75,12 @@ function initCalcCarousel() {
   let paused     = false;
 
   function goTo(idx) {
-    slides[current].classList.remove('active');
-    dots[current].classList.remove('active');
+    const prev = current;
+    slides[prev].classList.remove('active');
+    slides[prev].classList.add('exiting');
+    setTimeout(() => slides[prev].classList.remove('exiting'), 450);
+
+    dots[prev].classList.remove('active');
     current = (idx + slides.length) % slides.length;
     slides[current].classList.add('active');
     dots[current].classList.add('active');
