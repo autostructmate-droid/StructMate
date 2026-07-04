@@ -10,6 +10,9 @@ function buildHeroTitle() {
     const span = document.createElement('span');
     span.textContent = letter;
     span.className = 'letter';
+    if (i >= 6) {
+      span.style.color = '#2b3b83';
+    }
     span.style.animationDelay = `${0.35 + i * 0.075}s`;
     el.appendChild(span);
   });
@@ -64,15 +67,16 @@ function initReveal() {
 }
 
 /* =========================================================
-   CALC SHEET CAROUSEL
+   CALC SHEET CAROUSEL — with touch/swipe support
    ========================================================= */
 function initCalcCarousel() {
   const slides   = document.querySelectorAll('.calc-slide');
   const dots     = document.querySelectorAll('.carousel-dots .dot');
   const label    = document.getElementById('carousel-label');
+  const carousel = document.getElementById('calc-carousel');
   let current    = 0;
   let timer      = null;
-  let paused     = false;
+  let touchStartX = 0;
 
   function goTo(idx) {
     const prev = current;
@@ -94,19 +98,31 @@ function initCalcCarousel() {
     timer = setInterval(next, 2000);
   }
 
-  /* Dot click — manual jump */
+  /* Dot click */
   dots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
       goTo(i);
-      startTimer();          // reset interval so it doesn't jump immediately
+      startTimer();
     });
   });
 
   /* Pause on hover, resume on leave */
-  const carousel = document.getElementById('calc-carousel');
   if (carousel) {
-    carousel.addEventListener('mouseenter', () => { clearInterval(timer); });
+    carousel.addEventListener('mouseenter', () => clearInterval(timer));
     carousel.addEventListener('mouseleave', startTimer);
+
+    /* Swipe on mobile */
+    carousel.addEventListener('touchstart', e => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 50) {
+        goTo(current + (dx < 0 ? 1 : -1));
+        startTimer();
+      }
+    }, { passive: true });
   }
 
   /* Only start auto-rotating when the section enters the viewport */
@@ -158,13 +174,14 @@ function initCardTilt() {
       card.style.transform = `translateY(-10px) rotateX(${y}deg) rotateY(${x}deg)`;
     });
     card.addEventListener('mouseleave', () => {
+      /* Remove inline transform so CSS transition handles the return */
       card.style.transform = '';
     });
   });
 }
 
 /* =========================================================
-   ACTIVE NAV LINK
+   ACTIVE NAV LINK — highlights current section in navbar
    ========================================================= */
 function initActiveNav() {
   const sections = document.querySelectorAll('section[id]');
@@ -184,7 +201,7 @@ function initActiveNav() {
 }
 
 /* =========================================================
-   CURSOR GLOW — subtle radial that follows mouse in hero
+   CURSOR GLOW — radial that follows mouse in hero
    ========================================================= */
 function initCursorGlow() {
   const hero = document.querySelector('.hero');
@@ -196,12 +213,12 @@ function initCursorGlow() {
     const xPct = ((e.clientX - left) / width  * 100).toFixed(1);
     const yPct = ((e.clientY - top)  / height * 100).toFixed(1);
     glow.style.background =
-      `radial-gradient(circle at ${xPct}% ${yPct}%, rgba(91,91,214,0.14) 0%, transparent 65%)`;
+      `radial-gradient(circle at ${xPct}% ${yPct}%, rgba(37,99,235,0.16) 0%, transparent 65%)`;
   });
 
   hero.addEventListener('mouseleave', () => {
     glow.style.background =
-      'radial-gradient(circle, rgba(91,91,214,0.1) 0%, transparent 65%)';
+      'radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 65%)';
   });
 }
 
