@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AutoStructMate — Structural design software for slabs, staircases, and foundations. Design faster and smarter.">
+  <title>StructMate — Design Faster &amp; Smarter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar" id="navbar">
+    <a href="#home" class="nav-brand">
+      <img src="Logo.png" alt="AutoStructMate Logo" class="nav-logo">
+      <span class="nav-name">AutoStructMate</span>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home"    class="nav-link">Home</a></li>
+      <li><a href="#service" class="nav-link">Service</a></li>
+      <li><a href="#output"  class="nav-link">Output</a></li>
+      <li><a href="#about"   class="nav-link">About Us</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== Hero ===== -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="hero-grid-lines"></div>
+      <div class="hero-columns">
+        <div class="col-shape c1"></div>
+        <div class="col-shape c2"></div>
+        <div class="col-shape c3"></div>
+        <div class="col-shape c4"></div>
+      </div>
+      <div class="hero-glow"></div>
+    </div>
+    <div class="hero-content" id="hero-content">
+      <img src="Logo.png" alt="StructMate Logo" class="hero-logo">
+      <p class="hero-brand-name">AutoStructMate</p>
+      <h1 class="hero-title" id="hero-title" aria-label="STRUCTMATE"></h1>
+      <p class="hero-subtitle">D E S I G N &nbsp;&nbsp; F A S T E R &nbsp;&nbsp; &amp; &nbsp;&nbsp; S M A R T E R</p>
+      <div class="hero-cta">
+        <a href="#" class="btn-primary">Download</a>
+        <a href="#service" class="btn-ghost">Explore Features ↓</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </div>
+  </section>
+
+  <!-- ===== Services / Capabilities ===== -->
+  <section id="service" class="services">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="eyebrow">CAPABILITIES</span>
+        <h2 class="section-title">What you can design</h2>
+        <p class="section-desc">Three structural element types, covering the most common design tasks in RCC construction.</p>
+      </div>
+      <div class="cards-grid">
+
+        <article class="card reveal-up" style="--delay:0.1s">
+          <div class="card-img-wrap">
+            <img src="Slab.png" alt="Reinforced concrete slab with rebar" class="card-img" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Slab Design</h3>
+            <p class="card-desc">IS 456 Table 26 moment coefficients with linear interpolation. Full deflection and shear checks.</p>
+            <div class="card-tags">
+              <span class="tag">One Way</span>
+              <span class="tag">Two Way</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal-up" style="--delay:0.25s">
+          <div class="card-img-wrap">
+            <img src="Staircase.png" alt="Modern concrete staircase with glass railing" class="card-img" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Staircase Design</h3>
+            <p class="card-desc">Effective span, loading, main reinforcement and distribution steel per IS 456 Cl. 33.</p>
+            <div class="card-tags">
+              <span class="tag">Dog Legged</span>
+              <span class="tag">Straight</span>
+              <span class="tag">Quarter Turn</span>
+              <span class="tag">Open Well</span>
+              <span class="tag">Tread Riser</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal-up" style="--delay:0.4s">
+          <div class="card-img-wrap">
+            <img src="Foundation.png" alt="Isolated column footing foundation" class="card-img" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Foundation Design</h3>
+            <p class="card-desc">Safe bearing capacity, footing sizing, and reinforcement per IS 456 and IS 1893.</p>
+            <div class="card-tags">
+              <span class="tag">Isolated</span>
+              <span class="tag">Combined</span>
+              <span class="tag">Mat Footing</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Output ===== -->
+  <section id="output" class="output-section">
+    <div class="output-top-line"></div>
+    <div class="container">
+      <div class="output-grid">
+
+        <div class="output-text reveal-left">
+          <span class="eyebrow">OUTPUT</span>
+          <h2 class="output-heading">A calculation sheet<br>you can submit</h2>
+          <p class="output-sub">Every run generates a formal Word document with IS code references and clear pass/fail verdicts — ready to submit.</p>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="feature-text">
+                <strong>Automated design checks</strong>
+                <p>Deflection, shear, and development length verified against IS 456 limits on every run.</p>
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M2 12h3M19 12h3M12 2v3M12 19v3"/><path d="M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
+              </div>
+              <div class="feature-text">
+                <strong>Three design types</strong>
+                <p>Slabs, staircases, and foundations — all covered in one unified platform.</p>
+              </div>
+            </li>
+            <li class="feature-item">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              </div>
+              <div class="feature-text">
+                <strong>One-click .docx export</strong>
+                <p>Formal calculation sheet with IS code references, ready to open in Word and submit.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="output-preview reveal-right">
+          <div class="calc-carousel" id="calc-carousel">
+
+            <!-- Slide 1: Slab -->
+            <div class="calc-slide active" data-label="Slab Design">
+              <div class="calc-sheet">
+                <div class="calc-header">
+                  <span class="calc-title-text">TWO-WAY SLAB DESIGN</span>
+                  <span class="calc-mark">Mark: S-01</span>
+                </div>
+                <div class="calc-code-ref">IS 456:2000 · Cl. 24.4 · Table 26</div>
+                <div class="calc-block">
+                  <div class="calc-block-title">§1 · PARAMETERS</div>
+                  <div class="calc-row"><span>Shorter span l<sub>x</sub></span><span class="calc-val">4.000 <em>m</em></span></div>
+                  <div class="calc-row"><span>Longer span l<sub>y</sub></span><span class="calc-val">5.000 <em>m</em></span></div>
+                  <div class="calc-row"><span>Ratio l<sub>y</sub>/l<sub>x</sub></span><span class="calc-val">1.250 <em>—</em></span></div>
+                </div>
+                <div class="calc-block">
+                  <div class="calc-block-title">§4 · BENDING MOMENT</div>
+                  <div class="calc-row"><span>α<sub>x</sub> (Table 26)</span><span class="calc-val accent">0.0573</span></div>
+                  <div class="calc-row"><span>M<sub>ux</sub></span><span class="calc-val accent">10.34 <em>kN·m</em></span></div>
+                  <div class="calc-row"><span>A<sub>st,x</sub> required</span><span class="calc-val accent">382 <em>mm²/m</em></span></div>
+                </div>
+                <div class="calc-block">
+                  <div class="calc-block-title">§6 · CHECKS</div>
+                  <div class="calc-row"><span>Deflection</span><span class="calc-check">✓ OK</span></div>
+                  <div class="calc-row"><span>Shear</span><span class="calc-check">✓ OK</span></div>
+                  <div class="calc-row"><span>Dev. length</span><span class="calc-check">✓ OK</span></div>
+                </div>
+                <div class="calc-footer-bar">All 6 checks passed · Saved as .docx</div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Staircase -->
+            <div class="calc-slide" data-label="Staircase Design">
+              <div class="calc-sheet">
+                <div class="calc-header">
+                  <span class="calc-title-text">DOG-LEGGED STAIRCASE</span>
+                  <span class="calc-mark">Mark: ST-01</span>
+                </div>
+                <div class="calc-code-ref">IS 456:2000 · Cl. 33</div>
+                <div class="calc-block">
+                  <div class="calc-block-title">§1 · GEOMETRY</div>
+                  <div class="calc-row"><span>Riser R</span><span class="calc-val">150 <em>mm</em></span></div>
+                  <div class="calc-row"><span>Tread T</span><span class="calc-val">270 <em>mm</em></span></div>
+                  <div class="calc-row"><span>Effective span</span><span class="calc-val">3.200 <em>m</em></span></div>
+                </div>
+                <div class="calc-block">
+                  <div class="calc-block-title">§3 · LOADING</div>
+                  <div class="calc-row"><span>Dead load w<sub>d</sub></span><span class="calc-val accent">7.50 <em>kN/m²</em></span></div>
+                  <div class="calc-row"><span>Live load w<sub>l</sub></span><span class="calc-val accent">3.00 <em>kN/m²</em></span></div>
+                  <div class="calc-row"><span>W<sub>u</sub> (factored)</span><span class="calc-val accent">15.75 <em>kN/m</em></span></div>
+                </div>
+                <div class="calc-block">
+                  <div class="calc-block-title">§6 · CHECKS</div>
+                  <div class="calc-row"><span>Deflection</span><span class="calc-check">✓ OK</span></div>
+                  <div class="calc-row"><span>Shear</span><span class="calc-check">✓ OK</span></div>
+                  <div class="calc-row"><span>A<sub>st</sub> main</span><span class="calc-check">✓ 628 mm²/m</span></div>
+                </div>
+                <div class="calc-footer-bar">All 4 checks passed · Saved as .docx</div>
+              </div>
+            </div>
+
+            <!-- Slide 3: Foundation -->
+            <div class="calc-slide" data-label="Foundation Design">
+              <div class="calc-sheet">
+                <div class="calc-header">
+                  <span class="calc-title-text">ISOLATED FOOTING</span>
+                  <span class="calc-mark">Mark: F-01</span>
+                </div>
+                <div class="calc-code-ref">IS 456:2000 · IS 1893</div>
+                <div class="calc-block">
+                  <div class="calc-block-title">§1 · PARAMETERS</div>
+                  <div class="calc-row"><span>Column size</span><span class="calc-val">400×400 <em>mm</em></span></div>
+                  <div class="calc-row"><span>Column load P</span><span class="calc-val">850 <em>kN</em></span></div>
+                  <div class="calc-row"><span>Safe bear. cap.</span><span class="calc-val">150 <em>kN/m²</em></span></div>
+                </div>
+                <div class="calc-block">
+                  <div class="calc-block-title">§3 · DIMENSIONS</div>
+                  <div class="calc-row"><span>Base size</span><span class="calc-val accent">2.40×2.40 <em>m</em></span></div>
+                  <div class="calc-row"><span>Total depth D</span><span class="calc-val accent">450 <em>mm</em></span></div>
+                  <div class="calc-row"><span>A<sub>st</sub> required</span><span class="calc-val accent">1250 <em>mm²</em></span></div>
+                </div>
+                <div class="calc-block">
+                  <div class="calc-block-title">§6 · CHECKS</div>
+                  <div class="calc-row"><span>Bearing capacity</span><span class="calc-check">✓ OK</span></div>
+                  <div class="calc-row"><span>Punching shear</span><span class="calc-check">✓ OK</span></div>
+                  <div class="calc-row"><span>One-way shear</span><span class="calc-check">✓ OK</span></div>
+                </div>
+                <div class="calc-footer-bar">All 5 checks passed · Saved as .docx</div>
+              </div>
+            </div>
+
+          </div><!-- /.calc-carousel -->
+
+          <div class="carousel-controls">
+            <div class="carousel-dots">
+              <button class="dot active" data-index="0" aria-label="Slab Design"></button>
+              <button class="dot" data-index="1" aria-label="Staircase Design"></button>
+              <button class="dot" data-index="2" aria-label="Foundation Design"></button>
+            </div>
+            <span class="carousel-label" id="carousel-label">Slab Design</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About Us ===== -->
+  <section id="about" class="about">
+    <div class="about-left reveal-left">
+      <img src="LagoPage.png" alt="StructMate brand" class="about-bg-img">
+    </div>
+    <div class="about-right">
+      <div class="about-content reveal-right">
+        <h2 class="about-title">About Us</h2>
+        <p class="about-text">
+          AutoStructMate is an advanced structural design automation tool built for civil and structural
+          engineers. We streamline complex design workflows for slabs, staircases, and foundations —
+          enabling engineers to deliver accurate, code-compliant designs faster than ever before.
+        </p>
+        <p class="about-text">
+          Our software integrates design, analysis, and innovation into one seamless platform. From
+          preliminary design to final documentation, AutoStructMate empowers engineering teams to work
+          smarter and with greater confidence.
+        </p>
+        <a href="#" class="btn-outline">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="contact">
+
+    <!-- Left: dark brand panel -->
+    <div class="contact-left reveal-left">
+      <div class="contact-watermark" aria-hidden="true">
+        <img src="Logo.png" alt="" class="watermark-logo">
+      </div>
+      <div class="contact-left-content">
+        <span class="eyebrow light">GET IN TOUCH</span>
+        <h2 class="contact-main-title">Our<br>Contact</h2>
+        <p class="contact-tagline">Reach out to the AutoStructMate team for support, partnerships, or enquiries.</p>
+      </div>
+    </div>
+
+    <!-- Right: contact cards -->
+    <div class="contact-right">
+      <a href="https://instagram.com" class="contact-card reveal-up" style="--delay:0.1s" target="_blank" rel="noopener noreferrer">
+        <span class="contact-card-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.668.072 4.948c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.668-.014 4.948-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </span>
+        <div class="contact-card-text">
+          <span class="contact-card-platform">Instagram</span>
+          <span class="contact-card-handle">@autostructmate</span>
+        </div>
+        <span class="contact-card-arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a href="mailto:autostructmate@gmail.com" class="contact-card reveal-up" style="--delay:0.2s">
+        <span class="contact-card-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </span>
+        <div class="contact-card-text">
+          <span class="contact-card-platform">Email</span>
+          <span class="contact-card-handle">autostructmate@gmail.com</span>
+        </div>
+        <span class="contact-card-arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a href="https://facebook.com" class="contact-card reveal-up" style="--delay:0.3s" target="_blank" rel="noopener noreferrer">
+        <span class="contact-card-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </span>
+        <div class="contact-card-text">
+          <span class="contact-card-platform">Facebook</span>
+          <span class="contact-card-handle">AutoStructMate</span>
+        </div>
+        <span class="contact-card-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="Logo.png" alt="AutoStructMate" class="footer-logo">
+          <span>AutoStructMate</span>
+        </div>
+        <p class="footer-copy">&copy; 2025 AutoStructMate. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#home">Home</a>
+          <a href="#service">Service</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
